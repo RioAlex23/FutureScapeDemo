@@ -1,90 +1,355 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Portofolio - [Nemet Alexandru Sebastian]</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background-color: #2b7a78;
-      color: white;
-      padding: 50px 20px;
-      text-align: center;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      color: #2b7a78;
-    }
-    .project {
-      background-color: white;
-      margin: 20px 0;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .project img {
-      width: 100%;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    .project a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #3aafa9;
-      text-decoration: none;
-    }
-    .project a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      background-color: #2b7a78;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureScape - Pioneering Tomorrow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS for a 2030 Dark & Floating Design */
+        :root {
+            --primary-color: #00e676; /* Bright green for primary accents */
+            --secondary-color: #00b0ff; /* Bright blue for secondary accents */
+            --text-color-light: #e0e0e0; /* Light gray for main text */
+            --text-color-dark: #333333; /* Dark gray for text on light backgrounds */
+            --background-dark: #0a0a0a; /* Very dark background */
+            --card-background: #1a1a1a; /* Slightly lighter dark for floating cards */
+            --border-glow: 0 0 15px rgba(0, 230, 118, 0.6); /* Glow for floating elements */
+            --deep-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Deep shadow for floating effect */
+            --border-radius-lg: 15px; /* Larger border radius for modern feel */
+            --spacing-lg: 3rem; /* Larger spacing between sections */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-dark);
+            color: var(--text-color-light);
+            line-height: 1.8; /* Increased line height for readability */
+            /* Abstract background with subtle texture/gradient */
+            background: radial-gradient(circle at top left, #1c1c1c, #0a0a0a 70%);
+            background-attachment: fixed;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        header {
+            background-color: rgba(10, 10, 10, 0.8); /* Semi-transparent dark header */
+            color: var(--text-color-light);
+            padding: 1.5rem 0; /* More padding */
+            text-align: center;
+            box-shadow: var(--deep-shadow);
+            backdrop-filter: blur(5px); /* Frosted glass effect */
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif; /* Futuristic font for main title */
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(0, 230, 118, 0.7);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* More space between nav items */
+        }
+
+        nav ul li a {
+            color: var(--text-color-light);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.7rem 1.5rem;
+            transition: all 0.4s ease; /* Smoother transition */
+            border-radius: var(--border-radius-lg);
+            border: 1px solid transparent;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(0, 230, 118, 0.1); /* Subtle primary color background */
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-3px); /* Slight lift on hover */
+            box-shadow: var(--border-glow);
+        }
+
+        .container {
+            max-width: 1000px; /* Slightly wider container */
+            margin: var(--spacing-lg) auto; /* Large margin for separation */
+            padding: 0 1.5rem; /* More padding */
+            display: grid;
+            gap: var(--spacing-lg); /* Larger gap between grid items */
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 2.5fr 1.5fr; /* Adjusted column ratio */
+            }
+        }
+
+        main, aside {
+            background-color: var(--card-background); /* Darker background for floating cards */
+            padding: 2.5rem; /* More internal padding */
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--deep-shadow); /* Deeper shadow for floating effect */
+            border: 1px solid rgba(0, 230, 118, 0.2); /* Subtle glow border */
+            opacity: 0;
+            animation: fadeIn 1.8s ease-out forwards; /* Slower fadeIn */
+            position: relative; /* For z-index if needed */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+        }
+
+        main:hover, aside:hover {
+            transform: translateY(-5px); /* Lift cards on hover */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), var(--border-glow); /* Enhanced shadow and glow */
+        }
+
+        footer {
+            background-color: rgba(10, 10, 10, 0.8); /* Semi-transparent dark footer */
+            color: var(--text-color-light);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: var(--spacing-lg);
+            border-top: 2px solid var(--secondary-color);
+            box-shadow: var(--deep-shadow);
+            backdrop-filter: blur(5px);
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: var(--background-dark); /* Dark text on bright button */
+            padding: 1rem 2.5rem; /* Larger padding for button */
+            border: none;
+            border-radius: var(--border-radius-lg);
+            cursor: pointer;
+            font-size: 1.1rem; /* Slightly larger font */
+            font-weight: 700;
+            letter-spacing: 0.5px; /* Spaced out letters */
+            transition: all 0.3s ease; /* Smoother transition */
+            animation: pulse 2s infinite ease-in-out;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Initial floating shadow */
+            position: relative; /* For z-index or other effects */
+            overflow: hidden; /* For hover effects */
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.15); /* Light ripple effect */
+            border-radius: 50%;
+            transition: all 0.6s ease-out;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 0;
+        }
+
+        button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0;
+        }
+
+        button:hover {
+            background-color: #008cff; /* Deeper blue on hover */
+            transform: translateY(-7px); /* Lifts more dramatically */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px var(--secondary-color); /* Stronger glow and shadow */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif; /* Futuristic font for all headings */
+            color: var(--primary-color);
+            text-shadow: 0 0 8px rgba(0, 230, 118, 0.5); /* Subtle glow */
+            margin-bottom: 1.2rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        /* Abstract "image" sections using CSS gradients */
+        .abstract-visual-1 {
+            height: 200px; /* Define a height for the visual */
+            margin-bottom: 25px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--deep-shadow);
+            background: linear-gradient(135deg, #00e676, #00b0ff, #8e24aa); /* Bright, dynamic gradient */
+            border: 1px solid rgba(0, 230, 118, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .abstract-visual-1:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7), 0 0 10px var(--primary-color);
+        }
+
+        .abstract-visual-2 {
+            height: 180px; /* Define a height for the visual */
+            margin-bottom: 25px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--deep-shadow);
+            background: linear-gradient(45deg, #0d47a1, #1a237e, #3f51b5); /* Deep blue, techy gradient */
+            border: 1px solid rgba(0, 176, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .abstract-visual-2:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7), 0 0 10px var(--secondary-color);
+        }
+
+        /* Style for the "For Sale" banner */
+        .for-sale-banner {
+            background-color: rgba(0, 176, 255, 0.9); /* Blue accent, slightly transparent */
+            color: var(--background-dark); /* Dark text on bright background */
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: var(--spacing-lg); /* Space below the banner */
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            animation: slideInFromTop 1s ease-out forwards;
+            border: 1px solid var(--secondary-color);
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+
+        /* --- CSS Animations --- */
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translateY(0);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            }
+            50% {
+                transform: scale(1.02) translateY(-5px); /* Lift and scale more */
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 10px var(--secondary-color); /* Stronger shadow and glow */
+            }
+            100% {
+                transform: scale(1) translateY(0);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>FutureScape - Pioneering Tomorrow's Digital Realms</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
- <header>
-  <h1>Hi! I'm  [Alex]</h1>
-  <p>Web developer & designer</p>
-  <img src="Test/800x400.jpg" alt="Header Image" style="width:100%; max-width:800px; border-radius:10px;">
-</header>
+    <div class="container">
+        <div class="for-sale-banner">
+            **This website is a design example showcasing a modern, futuristic aesthetic, available for purchase.**
+            <br>
+            For inquiries, please contact us at <a href="mailto:alexnemet401@gmail.com" style="color: var(--background-dark); text-decoration: underline;">alexnemet401@gmail.com</a>.
+        </div>
 
-  <section>
-    <h2>About me </h2>
-    <p>I am passionate about web design and I love creating websites and applications that look good and work perfectly. In this portfolio you can find some projects I have worked on.</p>
-  </section>
+        <main>
+            <section id="home">
+                <h2>Welcome to the Next Era of Digital Experience</h2>
+                <div class="abstract-visual-1"></div> 
+                <p>Step into a realm where **innovation meets intuition**. FutureScape is at the forefront of digital evolution, crafting experiences that are not just visually stunning but also incredibly powerful. We're building the infrastructure for the **next decade of the web**, ensuring seamless, secure, and engaging interactions for everyone.</p>
+                <button id="changeTextBtn">Discover Our Vision</button>
+                <p id="dynamicText">Ready to explore what's possible?</p>
+            </section>
 
-  <section>
-    <h2>My projects </h2>
+            <section id="about">
+                <h2>Our Mission: Crafting the Future, Pixel by Pixel</h2>
+                <div class="abstract-visual-2"></div> 
+                <p>At FutureScape, we're more than just developers; we're **architects of the digital future**. Our diverse team of innovators, engineers, and strategists are united by a common passion: to create groundbreaking web solutions that set new industry standards. We thrive on challenges and are committed to **excellence in every line of code**, ensuring our platforms are robust, scalable, and inherently beautiful.</p>
+                <p>Our journey is defined by **continuous learning and bold experimentation**. We believe that true progress comes from pushing boundaries and reimagining what's possible. Join us in shaping a more connected, efficient, and dynamic digital world.</p>
+            </section>
 
-    <div class="project">
-      <h3>Proiect 1: Landing Page</h3>
-      <p>Un landing page modern pentru un startup.</p>
-      <img src="Test/800x400" alt="Landing Page">
-      <a href="https://github.com/exemplu/landing-page" target="_blank">Vezi pe GitHub</a>
+            <section id="services">
+                <h2>Elevating Your Digital Presence</h2>
+                <p>We offer a suite of advanced services designed to propel your online presence into the future:</p>
+                <ul>
+                    <li>**Advanced Web Architecture:** Designing and deploying highly performant, future-proof web platforms.</li>
+                    <li>**Immersive UI/UX Design:** Creating intuitive and captivating user interfaces that engage and convert.</li>
+                    <li>**Strategic Digital Optimization:** Enhancing your online visibility and reach with intelligent, data-driven strategies.</li>
+                    <li>**Proactive System Resilience:** Ensuring your digital assets remain secure and operational 24/7 with cutting-edge maintenance.</li>
+                </ul>
+            </section>
+        </main>
+
+        <aside>
+            <h3>Beyond Today: Insights and Connections</h3>
+            <p>Stay ahead of the curve with our **exclusive insights** into emerging technologies and digital trends. Explore our curated articles, research highlights, and expert analyses designed to inform and inspire.</p>
+            <p>We believe in fostering a vibrant community. Engage with **industry leaders and fellow enthusiasts** through our upcoming virtual events and collaborative forums. Your next big idea might just start here.</p>
+            <p>Connect with FutureScape:</p>
+            <ul>
+                <li><a href="#">X (Formerly Twitter)</a></li>
+                <li><a href="#">LinkedIn Network</a></li>
+                <li><a href="#">Community Forum</a></li>
+            </ul>
+        </aside>
     </div>
 
-  </section>
+    <footer id="contact">
+        <p><strong>Connect with FutureScape</strong></p>
+        <p>Ready to bring your vision to life? Our team is eager to collaborate.</p>
+        <p>Email: <a href="mailto:alexnemet401@gmail.com">alexnemet401@gmail.com</a></p>
+        <p>Virtual Consultation: Available upon request via our secure portal.</p>
+        <p>&copy; 2025 FutureScape. All Rights Reserved. Crafted for tomorrow, today.</p>
+    </footer>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: alexnemet4019@gmail.com</p>
-  </section>
+    <script>
+        // Modern JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            const changeTextBtn = document.getElementById('changeTextBtn');
+            const dynamicText = document.getElementById('dynamicText');
+            let clicked = false;
 
-  <footer>
-    <p>[Nemet Alexandru Sebastian]. Toate drepturile rezervate 2025.</p>
-  </footer>
-
+            changeTextBtn.addEventListener('click', () => {
+                if (!clicked) {
+                    dynamicText.textContent = "You've uncovered a new insight! Dive deeper into FutureScape's world.";
+                    clicked = true;
+                } else {
+                    dynamicText.textContent = "Ready to explore what's possible?";
+                    clicked = false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
